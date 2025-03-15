@@ -8,11 +8,15 @@ class Board:
         self.place_objects()
 
     def place_objects(self):
-        self.grid[0][0] = "A"  # Agente inicial
-        self.grid[random.randint(1, self.rows-1)][random.randint(1, self.cols-1)] = "O"  # Oro
+        #posicion jugador
+        self.grid[0][0] = "A" 
+        #posicion del oro
+        self.grid[random.randint(1, self.rows-1)][random.randint(1, self.cols-1)] = "O" 
         for _ in range(3):
-            self.grid[random.randint(0, self.rows-1)][random.randint(0, self.cols-1)] = "W"  # Wumpus
-            self.grid[random.randint(0, self.rows-1)][random.randint(0, self.cols-1)] = "P"  # Pozo
+            #posicion del wumpus
+            self.grid[random.randint(0, self.rows-1)][random.randint(0, self.cols-1)] = "W"  
+            #posicion del pozo
+            self.grid[random.randint(0, self.rows-1)][random.randint(0, self.cols-1)] = "P"  
 
     def display(self, player_pos):
         for y in range(self.rows):

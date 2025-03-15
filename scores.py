@@ -8,4 +8,10 @@ def save_score(name, time):
     except FileNotFoundError:
         df = pd.DataFrame(data)
     df.to_csv("scores.csv", index=False)
-    print("Puntuación guardada")
+    print("partida guardada")
+
+def load_scores():
+    try:
+        return pd.read_csv("scores.csv")
+    except FileNotFoundError:
+        return pd.DataFrame(columns=["Nombre", "Tiempo"])
